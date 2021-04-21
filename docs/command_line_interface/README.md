@@ -2183,7 +2183,7 @@ Option can be:
 
 ## Submit false-positive/false-negative
 
-To submit file as false positive (if Imunify360 considers file as a malicious but it actually isn't) you can use the following command (please make sure to specify the file name along with full path):
+To submit file as false positive (if Imunify360 considers file as a malicious but it actually isn't) you can use the following command. Make sure to specify the file name. Relative paths are also supported as well as full paths.
 
 <div class="notranslate">
 

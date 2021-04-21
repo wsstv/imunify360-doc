@@ -54,8 +54,13 @@ If succeeded, the status of Imunify360 service will be displayed at <span class=
 ![](/images/cpanel_set02.png)
 
 ### ModSecurity Settings
+
+:::warning Note
+Since version 92, cPanel is adding experimental support of ModSecurity 3.x and starting from version 5.7, we implement **experimental** support of ModSecurity version 3 on cPanel. Since the support is experimental, there are some limitations. Please find them [here](/hosting_panels_specific_settin/#modsecurity-3-apache-limitations).
+:::
  
 Recommended <span class="notranslate">mod_security</span> settings are:
+
 * <span class="notranslate">Audit Log Level – Only log noteworthy transactions</span>
 * <span class="notranslate">Connections Engine – Do not process the rules</span>
 * <span class="notranslate">Rules Engine – Process the rules</span>
@@ -92,7 +97,17 @@ If there is no Imunify360 ruleset installed, run <span class="notranslate">` imu
     Or you can use [WHMAPI1](https://documentation.cpanel.net/display/DD/WHM+API+1+Functions+-+modsec_enable_vendor_updates) to enable vendor auto-updates.
 
 * It is possible to block ModSecurity rules only for IPs that belong to some country. More info can be found in [FAQ](/faq_and_known_issues/#_9-disabling-waf-rules-for-certain-countries)
-  
+
+### ModSecurity 3 + Apache limitations
+
+Since version 92, cPanel is adding experimental support of ModSecurity 3.x and starting from version 5.7, we implement **experimental** support of ModSecurity version 3 on cPanel. There are still some issues that prevent some Imunify360 features from working property. The feature limitations are:
+
+* working with mod_ruid2
+* working with mod_remoteip
+* app-specific ruleset feature
+* HackerTrap
+* uploaded files scanning
+* simple password redirect
 
 ## Plesk
 

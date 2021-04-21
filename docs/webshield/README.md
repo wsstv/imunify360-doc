@@ -314,6 +314,29 @@ For cPanel/EasyApache 4, Plesk, DirectAdmin and LiteSpeed _mod_remoteip_ will be
 * QUIC.cloud CDN
 * BunnyCDN
 * Sucuri WAF
+* Ezoic
+
+#### How to trust all IPs that are specified by Ezoic CDN
+
+The “trust_ezoic” option for WebShield allows you to trust all IPs that are specified by Ezoic CDN as their own servers. By default the option is switched off, but it can be switched on in a straightforward way. Be aware when using this option, at this moment the list of Ezoic CDN servers is quite big and includes ranges that can be controlled by someone else in Amazon EC2.
+
+To enable it, open the `/etc/imunify360-webshield/virtserver.conf` file, find the directive set
+
+<div class="notranslate">
+
+```
+$trust_ezoic 0;
+```
+</div>
+
+replace `0` with `1`, save the file and restart WebShield, using the following command: 
+
+<div class="notranslate">
+
+```
+# service imunify360-webshield restart
+```
+</div>
 
 
 ### SplashScreen for Chinese customers
@@ -390,5 +413,34 @@ Or via CLI. To do so, run the following command:
 
 ```
 # imunify360-agent config update '{"WEBSHIELD": {"splash_screen": true}}'
+```
+</div>
+
+## How to write custom code on WebShield
+
+Starting from Imunify360 v.5.7, users can change WebShield configuration by creating custom configuration files, which will be included in general config once WebShield will start.
+
+To enable it, open the `/etc/imunify360-webshield/virtserver.conf` file, find the directive `set $trust_ezoic 0;`.
+
+Replace `0` with `1`, save the file and restart WebShield by running the following command:
+
+<div class="notranslate">
+
+```
+# service imunify360-webshield restart
+```
+</div>
+
+Example of the code on Lua:
+
+<div class="notranslate">
+
+```lua
+header_filter_by_lua_block {
+   local args = ngx.var.query_string
+   if args == nil then
+       if ngx.req.get_method() == 'GET' then ngx.header.set_cookie = nil
+end
+}
 ```
 </div>
