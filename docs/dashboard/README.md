@@ -1661,7 +1661,20 @@ Read [CXS integration](/ids_integration/#cxs-integration) documentation carefull
   ::: tip Note
   It requires inotify to be installed and may put an additional load on a system.
   :::
-* <span class="notranslate">_Optimize real-time scan_</span> – enables the [File Change API](https://docs.cloudlinux.com/cloudlinux_os_kernel/#file-change-api) support to reduce the system load while watching for file changes in comparison with inotify watchs.
+* <span class="notranslate">_Optimize real-time scan_</span> – enables the [File Change API](https://docs.cloudlinux.com/cloudlinux_os_kernel/#file-change-api) and **fanotify** support to reduce the system load while watching for file changes in comparison with inotify watchs.
+
+  | | | | |
+  |-|:-:|:-:|:-:|
+  | |**inotify**|**fanotify**|**File change API**|
+  |CentOS 6|x| | |
+  |CentOS 7|x|x| |
+  |CentOS 8|x|x| |
+  |CloudLinux OS 6|x| | |
+  |CloudLinux OS 7|x| |x|
+  |CloudLinux OS 8|x| | |
+  |Ubuntu 16|x|x| |
+  |Ububtu 18|x|x| |
+
 * <span class="notranslate">_Automatically scan any file uploaded using web_</span> – enables real-time scanning of all the files that were uploaded via http/https.
   ::: tip Note
   It requires [ModSecurity](https://modsecurity.org/) to be installed.
