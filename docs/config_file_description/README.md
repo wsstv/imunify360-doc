@@ -230,9 +230,9 @@ to request CAPTCHA again</td></tr>
 <tr><td><span class="notranslate">PAM.ftp_protection: False</span></td>
 <td># enable (<span class="notranslate">True</span>) or disable (<span class="notranslate">False</span>) (default value) FTP brute-force attack protection.</td></tr>
 <tr>
-<th align="left"><span class="notranslate">KERNELCARE:</span></th>
+<th align="left"><span class="notranslate">KERNELCARE:</span> (<b><font color="Red">deprecated</font></b>)</th>
 <th align="left"># KernelCare extension for Imunify360 which allows tracing malicious invocations to detect privilege escalation attempts</th></tr>
-<tr><td><span class="notranslate">edf: False</span></td>
+<tr><td><span class="notranslate">edf: False</span> (<b><font color="Red">deprecated</font></b>)</td>
 <td># enable (<span class="notranslate">True</span>) or disable (<span class="notranslate">False</span>) (default value) exploit detection framework</td></tr>
 <tr><th colspan="2" align="left"><span class="notranslate">MALWARE_CLEANUP:</span></th></tr>
 <tr><td><span class="notranslate">trim_file_instead_of_removal: True</span></td>

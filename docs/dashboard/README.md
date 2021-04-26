@@ -1258,7 +1258,11 @@ To install or uninstall KernelCare click on a button related. Please find additi
 KernelCare is free on the servers with Imunify360 installed.
 :::
 
-#### Privilege escalation detection & protection
+#### Privilege escalation detection & protection <Badge text="Deprecated" type="error" vertical="top"/>
+
+:::warning Warning!
+This feature is deprecated.
+:::
 
 The KernelCare extension for Imunify360 allows tracing malicious invocations to detect privilege escalation attempts.
 
