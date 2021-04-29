@@ -197,7 +197,7 @@ to request CAPTCHA again</td></tr>
 <tr>
 <th colspan="2" align="left"><span class="notranslate">PROACTIVE_DEFENCE:</span></th></tr>
 <tr><td><span class="notranslate">blamer: True</span></td>
-<td># enable (<span class="notranslate">True</span> (default)) or disable (<span class="notranslate">False) Blamer</span></td></tr>
+<td># enable (<span class="notranslate">True</span> (default)) or disable (<span class="notranslate">False) Blamer</span>. See also: <a href="https://blog.imunify360.com/forcibly-enable-blamer" target="_blank">How to forcibly enable Blamer for all users on the server</a>.</td></tr>
 <tr><td><span class="notranslate">mode: LOG</span></td>
 <td># available modes:<ul><li><span class="notranslate">KILL</span></li><li><span class="notranslate">DISABLED</span></li><li><span class="notranslate">LOG</span> (default)</li></ul></td></tr>
 <tr><td><span class="notranslate">php_immunity: False</span></td>
@@ -270,7 +270,10 @@ to request CAPTCHA again</td></tr>
 <td># enable (<span class="notranslate">True</span>) or disable (<span class="notranslate">False</span>) (the default value) “scan” action in the UI of the end-user.</td></tr>
 <tr>
 <td width="250px;"><span class="notranslate">advisor: True</span></td><td># enable (<span class="notranslate">True</span> - the default value) or disable (<span class="notranslate">False</span>) the Imunify Advisor.</td></tr>
-
+<tr>
+<td width="250px;"><span class="notranslate">user_override_malware_actions: False</span></td><td># <span class="notranslate">"True"</span> allows overriding of actions applied to malware by a regular user. E.g., users will be able to disable automatic cleanup for their own files even if it was enabled by the admin.</td></tr>
+<tr>
+<td width="250px;"><span class="notranslate">user_override_proactive_defense: False</span></td><td># <span class="notranslate">"True"</span> allows overriding of Proactive Defense work mode by a regular user. E.g., users will be able to switch Proactive Defense mode to <span class="notranslate">LOG</span> for their websites even if the admin has set it to <span class="notranslate">KILL</span>.</td></tr>
 <tr><th colspan="2" align="left"><span class="notranslate">STOP_MANAGING:</span></th></tr>
 <tr><td><span class="notranslate">modsec_directives: False</span></td>
 <td># for internal usage, do not edit</td></tr>
